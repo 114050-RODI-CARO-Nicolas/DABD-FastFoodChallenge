@@ -20,13 +20,13 @@ En este ejercicio podrán hacer uso de Input, Output, ngIf, ngFor, comunicación
 ## Puntos Técnicos
 
 Clase Pedido:
-``
+```
 {
     numero: number; // Numero de pedido random de 1 a 1000
     nombre: string;  // Nombre del cliente
     descripcion: string;  // Descripción del pedido
 }
-``
+```
 
 Importante recordar la separación de responsabilidades, quien hace que y como.
 
