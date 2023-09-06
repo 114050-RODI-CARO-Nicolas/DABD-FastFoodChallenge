@@ -5,13 +5,13 @@
 La idea es hacer una App que nos permita gestionar un restaurant de comida rápida:
 - Ingresar un nuevo pedido
 - Mostrarlo como "pendiente"
-- Poder reclamarlo en cocina para cocinar
+- Poder tomarlo en cocina para cocinar
 - Una vez terminado notificar que se encuentra listo para entregar
 - Entregarlo
 
 La aplicación constará de 4 Componentes
 - POS: Point of Sell (Donde se hacen los pedidos)
-- Cocina: Lugar donde se reclaman y cocinan los pedidos
+- Cocina: Lugar donde se toman y cocinan los pedidos
 - Punto de Entrega: Donde entegamos el pedido
 - Restaurante: La aplicación que engloba los componentes
 
