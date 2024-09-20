@@ -15,31 +15,31 @@ export class AppComponent implements OnInit {
   title = 'fastfood';
 
   orders : Order[] = []
+  pendingOrders : Order[] = [];
  
-
-
 
   private orderService = inject(OrderService)
 
-   
-
-
+  
   ngOnInit(): void {
-    this.getAllOrders();
-    this.getOrdersPendingCooking()
-   
+    this.getOrdersPendingCooking();
 
+  }
+
+  onNewOrderAdded(){
+    this.getOrdersPendingCooking();
   }
 
   getAllOrders(){
     console.log('get all orders at appcomponents')
-    this.orders = this.orderService.getAllOrders();
+    this.orders = this.orderService.getAllOrdersService();
 
   }
 
   getOrdersPendingCooking(){
-    this.orders = this.orderService.getOrdersPendingCooking();
+    this.orders = this.orderService.getOrdersByStatus(OrderStatus.PENDING_COOK);
     console.log("this.orders en getOrdersPendingCooking en appComponent ", this.orders)
   }
+
 
 }

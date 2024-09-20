@@ -12,12 +12,8 @@ import { Order } from '../models/order';
 })
 export class PointOfSellComponent {
 
+  @Output() newOrderAdded = new EventEmitter<void>();
   private orderService = inject(OrderService);
-
-
-
-
-
   onSubmit(form : NgForm)
   { 
     if(form.valid)
@@ -29,13 +25,10 @@ export class PointOfSellComponent {
         descripcion : form.value.orderDescription,
         status : OrderStatus.PENDING_COOK
       };
-      this.orderService.addOrder(newOrder);
+      this.orderService.addOrderService(newOrder); // pushea datos al service
+      this.newOrderAdded.emit(); //avisa a componente padre que hay datos nuevos para que actue en consecuencia
     }
 
   }
-
-
-  
-
 
 }

@@ -10,34 +10,22 @@ export class OrderService {
 
 
    
-  addOrder(order : Order)
+  addOrderService(order : Order)
   {
     console.log('order at service.addOrder ', order)
     this.orders.push(order);
   }
 
-  getAllOrders(){
+  getAllOrdersService(){
     return this.orders;
   }
 
-
-  // Por alguna razon no me funcionan cuando los llamo desde un metodo en appcomponent que a su vez es llamado por ngOnInit
-
-  getOrdersPendingCooking(){
- 
-    return this.orders.filter(order => order.status === OrderStatus.PENDING_COOK);
-  
+  getOrdersByStatus(status : OrderStatus):Order[]{
+    return this.orders.filter(order=> order.status === status);
   }
 
-  getOrdersInCooking(){
-    return this.orders.filter(order => order.status === OrderStatus.IN_COOK);
-   
-    
-  }
 
-  getOrdersReadyForDelivery(){
-   return this.orders.filter(order => order.status === OrderStatus.READY_FOR_DELIVERY);
-  }
+
 
   
 
