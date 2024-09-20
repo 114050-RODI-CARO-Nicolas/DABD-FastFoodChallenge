@@ -1,15 +1,4 @@
 
-<div class="container">
-
-
-    <h3>Listado de pedidos</h3>
-    <ul>
-        @for(order of orders; track order.nombre)
-        {
-            <li>{{order.nombre}} - {{order.descripcion}}</li>
-        }
-    </ul>
-
-</div>
+<app-order-list [orders]="pendingOrders"></app-order-list>
 
 <app-point-of-sell (newOrderAdded)="onNewOrderAdded()"  > </app-point-of-sell>

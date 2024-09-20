@@ -20,7 +20,7 @@ export class OrderService {
     return this.orders;
   }
 
-  getOrdersByStatus(status : OrderStatus):Order[]{
+  getOrdersByStatusService(status : OrderStatus):Order[]{
     return this.orders.filter(order=> order.status === status);
   }
 

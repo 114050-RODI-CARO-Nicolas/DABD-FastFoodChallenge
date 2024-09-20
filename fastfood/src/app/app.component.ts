@@ -4,10 +4,12 @@ import { PointOfSellComponent } from "./point-of-sell/point-of-sell.component";
 import { OrderService } from './services/order.service';
 import { Order } from './models/order';
 import { OrderStatus } from './models/order-status';
+import { KitchenComponent } from "./kitchen/kitchen.component";
+import { OrderListComponent } from "./order-list/order-list.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PointOfSellComponent],
+  imports: [RouterOutlet, PointOfSellComponent, KitchenComponent, OrderListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -37,7 +39,7 @@ export class AppComponent implements OnInit {
   }
 
   getOrdersPendingCooking(){
-    this.orders = this.orderService.getOrdersByStatus(OrderStatus.PENDING_COOK);
+    this.pendingOrders = this.orderService.getOrdersByStatusService(OrderStatus.PENDING_COOK);
     console.log("this.orders en getOrdersPendingCooking en appComponent ", this.orders)
   }
 
