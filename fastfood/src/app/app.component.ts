@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   orders : Order[] = []
   pendingOrders : Order[] = [];
+  cookingOrders : Order[] = [];
  
 
   private orderService = inject(OrderService)
@@ -30,6 +31,11 @@ export class AppComponent implements OnInit {
 
   onNewOrderAdded(){
     this.getOrdersPendingCooking();
+  };
+
+  onOrderStartedCooking(){
+    this.getOrdersPendingCooking();
+    this.getOrdersCooking();
   }
 
   getAllOrders(){
@@ -41,6 +47,11 @@ export class AppComponent implements OnInit {
   getOrdersPendingCooking(){
     this.pendingOrders = this.orderService.getOrdersByStatusService(OrderStatus.PENDING_COOK);
     console.log("this.orders en getOrdersPendingCooking en appComponent ", this.orders)
+  
+  }
+
+  getOrdersCooking(){
+    this.cookingOrders = this.orderService.getOrdersByStatusService(OrderStatus.IN_COOK);
   }
 
 

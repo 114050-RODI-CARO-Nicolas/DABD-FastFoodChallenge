@@ -1,19 +1,22 @@
-<h2>Cocina</h2>
+<div>
+    <h2>Cocina</h2>
 
-<h4>Pendiente de cocinar</h4>
-<ul>
-    @for(opc of ordersPendingCooking; track opc.numero)
-    {
-
-        <li>{{opc.nombre }} - {{opc.numero}} <button class="btn btn-is-primary" type="button">Cocinar</button> </li>
-    }
-</ul>
-
-<h4>Pedidos en coccion </h4>
-<ul>
-    @for( oic of ordersCooking; track oic.numero)
-    {
-
-        <li>{{oic.nombre }} - {{oic.numero}} <button class="btn btn-is-primary" type="button">Pedido terminado!</button> </li>
-    }
-</ul>
+    <h4>Pendiente de cocinar</h4>
+    <ul>
+        @for(opc of ordersPendingCooking; track opc.numero)
+        {
+    
+            <li>{{opc.nombre }} - {{opc.numero}} <button class="btn btn-primary" type="button" (click)="startCookingOrder(opc.numero)" [disabled]="currentlyCooking" >Cocinar</button> </li>
+        }
+    </ul>
+    
+    <h4>Pedidos en coccion </h4>
+    <ul>
+        @for( oic of ordersCooking; track oic.numero)
+        {
+    
+            <li>{{oic.nombre }} - {{oic.numero}} <button class="btn btn-primary" type="button">Pedido terminado!</button> </li>
+        }
+    </ul>
+    
+</div>

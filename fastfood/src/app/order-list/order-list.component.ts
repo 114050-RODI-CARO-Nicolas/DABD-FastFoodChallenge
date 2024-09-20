@@ -9,6 +9,6 @@ import { Order } from '../models/order';
   styleUrl: './order-list.component.css'
 })
 export class OrderListComponent {
-  @Input() orders : Order[] = [];
+  @Input() ordersPendingCooking : Order[] = [];
 
 }

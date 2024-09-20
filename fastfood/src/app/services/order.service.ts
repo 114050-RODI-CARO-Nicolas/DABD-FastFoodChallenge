@@ -24,6 +24,14 @@ export class OrderService {
     return this.orders.filter(order=> order.status === status);
   }
 
+  updateOrderStatusService(orderNumber : number, newStatus : OrderStatus)
+  {
+    const foundIndex = this.orders.findIndex(o=> o.numero==orderNumber);
+    this.orders[foundIndex].status = newStatus;
+
+
+  }
+
 
 
 

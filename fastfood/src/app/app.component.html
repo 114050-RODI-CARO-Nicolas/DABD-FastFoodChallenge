@@ -1,4 +1,15 @@
+<div >
 
-<app-order-list [orders]="pendingOrders"></app-order-list>
+    <app-order-list [ordersPendingCooking]="pendingOrders"></app-order-list>
 
-<app-point-of-sell (newOrderAdded)="onNewOrderAdded()"  > </app-point-of-sell>
+    <app-point-of-sell (newOrderAdded)="onNewOrderAdded()"  > </app-point-of-sell>
+    <app-kitchen 
+    [ordersPendingCooking]="pendingOrders" 
+    [ordersCooking]="cookingOrders"
+    (orderStartedCooking)="onOrderStartedCooking()"
+    
+    > </app-kitchen>
+    
+</div>
+
+
